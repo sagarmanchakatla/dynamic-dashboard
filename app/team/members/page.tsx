@@ -31,7 +31,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { format } from "date-fns";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
-import Sidebar from "@/components/Sidebar";
+// import Sidebar from "@/components/Sidebar";
 import { useRouter } from "next/navigation";
 
 interface User {
