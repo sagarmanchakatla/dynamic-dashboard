@@ -225,7 +225,9 @@ export default function Dashboard() {
                               ) : (
                                 <PaginationLink
                                   isActive={pageNumber === currentPage}
-                                  onClick={() => handlePageChange(pageNumber)}
+                                  onClick={() =>
+                                    handlePageChange(Number(pageNumber))
+                                  }
                                 >
                                   {pageNumber}
                                 </PaginationLink>
