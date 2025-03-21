@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
-import { useMobile } from '@/hooks/use-mobile';
+// import { useMobile } from '@/hooks/use-mobile';
 import { cn } from "@/lib/utils";
 import { Inter } from "next/font/google";
 
@@ -20,7 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("min-h-screen bg-background antialiased", inter.className)}>
+      <body
+        className={cn(
+          "min-h-screen bg-background antialiased",
+          inter.className
+        )}
+      >
         <div className="relative flex min-h-screen flex-col">
           <div className="flex-1 flex-grow">
             <ThemeProvider
