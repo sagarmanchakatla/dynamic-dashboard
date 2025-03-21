@@ -3,9 +3,10 @@ import prisma from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 
 export async function POST(req: NextRequest) {
+  console.log("Registering user");
   try {
     const { email, password } = await req.json();
-
+    console.log(email, password);
     if (!email || !password) {
       return NextResponse.json(
         { error: "Email and password are required" },
