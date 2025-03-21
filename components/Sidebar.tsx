@@ -28,6 +28,11 @@ import {
 
 const navItems = [
   {
+    title: "Home",
+    icon: Home,
+    href: "/",
+  },
+  {
     title: "Dashboard",
     icon: LayoutDashboard,
     href: "/dashboard",

@@ -1,6 +1,5 @@
 "use client";
 
-// import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import {
@@ -17,18 +16,25 @@ import {
   Check,
   Code,
   Database,
+  Github,
   Layout,
+  Linkedin,
   Palette,
   Shield,
   Smartphone,
 } from "lucide-react";
 
+import { useRouter } from "next/navigation";
+
 export default function LandingPage() {
-  // Mock function for the header's logout
+  const router = useRouter();
   const handleLogout = () => {
     console.log("Logout clicked");
   };
 
+  const handleDemoClick = () => {
+    router.push("/dashboard");
+  };
   return (
     <div className="flex min-h-screen flex-col">
       <Header
@@ -152,10 +158,10 @@ export default function LandingPage() {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
-                      <li className="flex items-center">
+                      {/* <li className="flex items-center">
                         <Check className="mr-2 h-4 w-4 text-green-500" />
                         Server-side rendering with getServerSideProps
-                      </li>
+                      </li> */}
                       <li className="flex items-center">
                         <Check className="mr-2 h-4 w-4 text-green-500" />
                         Client-side filtering with React hooks
@@ -185,10 +191,10 @@ export default function LandingPage() {
                         <Check className="mr-2 h-4 w-4 text-green-500" />
                         Dark, light, and system theme modes
                       </li>
-                      <li className="flex items-center">
+                      {/* <li className="flex items-center">
                         <Check className="mr-2 h-4 w-4 text-green-500" />
                         Responsive design for all devices
-                      </li>
+                      </li> */}
                       <li className="flex items-center">
                         <Check className="mr-2 h-4 w-4 text-green-500" />
                         Hover effects and transitions
@@ -428,7 +434,7 @@ export default function LandingPage() {
               </CardDescription>
             </CardHeader>
             <CardFooter className="flex justify-center pb-6">
-              <Button size="lg" className="gap-2">
+              <Button size="lg" className="gap-2" onClick={handleDemoClick}>
                 <Smartphone className="h-4 w-4" />
                 View Demo
               </Button>
@@ -437,13 +443,38 @@ export default function LandingPage() {
         </div>
       </main>
 
-      <footer className="border-t py-6 md:py-8">
-        <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-center text-sm text-muted-foreground md:text-left">
-            Dashboard Project - Built with Next.js and shadcn/ui
-          </p>
+      <footer className="border-t py-6 md:py-8 ">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:justify-between items-center">
+            <p className="ext-center text-sm text-muted-foreground md:text-left">
+              🌟 Dashboard Project - Crafted with Next.js and shadcn/ui 🌟
+            </p>
+
+            <div className="flex gap-4 items-center mt-4 md:mt-0">
+              <a
+                href="https://www.linkedin.com/in/sagar-manchakatla-4163-523b44284/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-400 transition-colors"
+              >
+                <Linkedin className="h-5 w-5" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+              <a
+                href="https://github.com/sagarmanchakatla/dynamic-dashboard"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-400 transition-colors"
+              >
+                <Github className="h-5 w-5" />
+                <span className="sr-only">GitHub</span>
+              </a>
+            </div>
+          </div>
+
           <p className="text-center text-sm text-muted-foreground md:text-right">
-            Deployed on Vercel
+            &copy; {new Date().getFullYear()} Sagar Manchakatla. All rights
+            reserved.
           </p>
         </div>
       </footer>

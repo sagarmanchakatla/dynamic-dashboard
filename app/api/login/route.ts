@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 export async function POST(req: Request) {
+  console.log("Logging in user");
   try {
     // Parse the request body
     const { email, password } = await req.json();
