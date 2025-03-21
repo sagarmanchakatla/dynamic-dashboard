@@ -23,9 +23,9 @@ import {
 
 export default function Dashboard() {
   const [allData, setAllData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
   const router = useRouter();
   const [userEmail, setUserEmail] = useState("");
 
@@ -51,7 +51,9 @@ export default function Dashboard() {
       setError(null);
     } catch (error) {
       console.error("Error fetching data:", error);
-      setError(error);
+      setError(
+        error instanceof Error ? error : new Error("An unknown error occurred")
+      );
     } finally {
       // Add a slight delay to show the loading state
       setTimeout(() => {
@@ -82,7 +84,7 @@ export default function Dashboard() {
     router.push("/login");
   };
 
-  const handlePageChange = (pageNumber) => {
+  const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
     // Scroll to top of the page when changing pages
     window.scrollTo({ top: 0, behavior: "smooth" });
