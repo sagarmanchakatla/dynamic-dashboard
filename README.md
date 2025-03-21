@@ -2,7 +2,13 @@
 
 A fully functional, responsive dashboard application built with Next.js, featuring authentication, API data fetching, and a modern UI powered by Tailwind CSS and shadcn/ui components.
 
-![Dashboard Preview](https://via.placeholder.com/800x400?text=Dashboard+Preview)
+#
+
+## Dashboard preview
+
+https://dynamic-dashboard-cnm5.vercel.app
+
+#
 
 ## 🚀 Features
 
@@ -35,6 +41,8 @@ A fully functional, responsive dashboard application built with Next.js, featuri
 - Interactive elements with hover effects and transitions
 - Modular, reusable component architecture
 
+#
+
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js (App Router)
@@ -45,11 +53,15 @@ A fully functional, responsive dashboard application built with Next.js, featuri
 - **API**: JSONPlaceholder
 - **Deployment**: Vercel
 
+#
+
 ## 📋 Requirements
 
 - Node.js 16.8 or later
 - npm or yarn package manager
 - PostgreSQL database (Neon PostgreSQL used in this implementation)
+
+#
 
 ## 🔧 Installation
 
@@ -93,31 +105,61 @@ A fully functional, responsive dashboard application built with Next.js, featuri
 
 6. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
+#
+
 ## 🧩 Project Structure
 
 ```
+I'll create a README structure that explains your project based on the directory structure shown in the image. Here's what your README could look like:
+markdownCopy# Dynamic Dashboard
+
+A web application with user authentication and dashboard functionality.
+
+## Project Structure
 dynamic-dashboard/
-├── app/                   # Next.js App Router
-│   ├── api/               # API routes
-│   ├── auth/              # Authentication pages
-│   ├── dashboard/         # Dashboard pages
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Landing page
-├── components/            # Reusable components
-│   ├── ui/                # shadcn/ui components
-│   ├── header.tsx         # Header component
-│   ├── sidebar.tsx        # Sidebar navigation
-│   └── ...                # Other components
-├── lib/                   # Utility functions
-│   ├── auth.ts            # Authentication utilities
-│   └── utils.ts           # Helper functions
-├── prisma/                # Prisma schema and migrations
-├── public/                # Static assets
-├── styles/                # Global styles
-├── .env                   # Environment variables
-├── next.config.js         # Next.js configuration
-└── README.md              # Project documentation
+├── app/                      # Main application directory
+│   ├── api/                  # API routes and handlers
+│   │   ├── login/            # Login API endpoints
+│   │   │   └── route.ts
+│   │   ├── register/         # Registration API endpoints
+│   │   │   └── route.ts
+│   │   └── users/            # User management API endpoints
+│   │       └── route.ts
+│   ├── dashboard/            # Dashboard views
+│   │   └── page.tsx
+│   ├── login/                # Login page
+│   │   └── page.tsx
+│   ├── register/             # Registration page
+│   │   └── page.tsx
+│   └── team/                 # Team-related pages
+│       └── members/          # Team members page
+│           ├── page.tsx
+│           ├── favicon.ico
+│           ├── globals.css
+│           ├── layout.tsx
+│           └── page.tsx
+├── components/               # Reusable UI components
+│   ├── ui/                   # UI components
+│   │   ├── auth-layout.tsx
+│   │   ├── Header.tsx
+│   │   ├── PostCard.tsx
+│   │   ├── Sidebar.tsx
+│   │   ├── theme-provider.tsx
+│   │   └── theme-toggle.tsx
+│   └── hooks/                # Custom React hooks
+├── lib/                      # Utility functions and libraries
+├── node_modules/             # Node.js dependencies
+├── prisma/                   # Database ORM configuration
+├── public/                   # Static assets
+├── .env                      # Environment variables
+├── .gitignore                # Git ignore configuration
+├── components.json           # Component configuration
+├── eslint.config.mjs         # ESLint configuration
+├── next-env.d.ts             # Next.js TypeScript definitions
+└── next.config.js            # Next.js configuration
 ```
+
+#
 
 ## 🔄 Authentication Flow
 
@@ -135,22 +177,17 @@ dynamic-dashboard/
    - Clears token from localStorage
    - Redirects user to login page
 
+#
+
 ## 📊 API Data Handling
 
-- Initial data is fetched using `getServerSideProps` for SEO and performance
 - Client-side filtering implemented with React hooks:
   - `useState` for managing filter state
   - `useEffect` for handling filter changes
 - Pagination system displays 5 posts per page
 - Error boundary catches and displays API failures gracefully
 
-## 📱 Responsive Design
-
-The dashboard is fully responsive across all device sizes:
-
-- Mobile: Collapsible sidebar, stacked layout
-- Tablet: Semi-expanded layout with optimized spacing
-- Desktop: Full layout with expanded sidebar and data table
+#
 
 ## 🎨 UI Components
 
@@ -162,6 +199,8 @@ Built using shadcn/ui components for a consistent design language:
 - Form elements with validation states
 - Cards for presenting information in organized sections
 
+#
+
 ## 🚀 Deployment
 
 This project is configured for deployment on Vercel:
@@ -170,6 +209,8 @@ This project is configured for deployment on Vercel:
 2. Configure environment variables in the Vercel dashboard
 3. Deploy automatically from your main branch
 
+#
+
 ## 👤 Developer
 
 Developed by Sagar Manchakatla
@@ -177,6 +218,4 @@ Developed by Sagar Manchakatla
 - [LinkedIn](https://www.linkedin.com/in/sagar-manchakatla-4163-523b44284/)
 - [GitHub](https://github.com/sagarmanchakatla/dynamic-dashboard)
 
-## 📄 License
-
-This project is licensed under the MIT License.
+#
