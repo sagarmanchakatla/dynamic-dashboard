@@ -4,14 +4,11 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  BarChart3,
   Home,
   LayoutDashboard,
   LogOut,
-  Settings,
-  User,
-  Users,
   ChevronRight,
+  Users,
 } from "lucide-react";
 
 import {
@@ -35,9 +32,20 @@ const navItems = [
     icon: LayoutDashboard,
     href: "/dashboard",
   },
+  {
+    title: "Team",
+    icon: Users,
+    href: "/team",
+    subItems: [
+      {
+        title: "Members",
+        href: "/team/members",
+      },
+    ],
+  },
 ];
 
-export function AppSidebar({ logOut }) {
+export function AppSidebar({ logOut }: { logOut: () => void }) {
   const pathname = usePathname();
 
   return (
@@ -54,7 +62,7 @@ export function AppSidebar({ logOut }) {
         <SidebarMenu>
           {navItems.map((item) => (
             <SidebarMenuItem key={item.title}>
-              {item.subItems ? (
+              {item?.subItems ? (
                 <React.Fragment>
                   <SidebarMenuButton>
                     <item.icon className="h-4 w-4" />
@@ -62,7 +70,7 @@ export function AppSidebar({ logOut }) {
                     <ChevronRight className="ml-auto h-4 w-4 transition-transform ui-open:rotate-90" />
                   </SidebarMenuButton>
                   <SidebarMenuSub>
-                    {item.subItems.map((subItem) => (
+                    {item?.subItems.map((subItem) => (
                       <SidebarMenuSubItem key={subItem.title}>
                         <SidebarMenuSubButton
                           asChild
@@ -104,7 +112,7 @@ export function AppSidebar({ logOut }) {
   );
 }
 
-export default function SidebarWrapper({ logout }) {
+export default function SidebarWrapper({ logout }: { logout: () => void }) {
   return (
     <SidebarProvider>
       <AppSidebar logOut={logout} />
