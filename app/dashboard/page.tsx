@@ -85,7 +85,7 @@ export default function Dashboard() {
   };
 
   const handlePageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
+    setCurrentPage(Number(pageNumber));
     // Scroll to top of the page when changing pages
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
